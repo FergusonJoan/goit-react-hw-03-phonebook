@@ -41,8 +41,6 @@ export class App extends Component {
     );
   };
   componentDidMount() {
-    console.log('App componentDidMount');
-
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
 
@@ -51,8 +49,6 @@ export class App extends Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('App componentDidUpdste');
-
     if (this.state.contacts !== prevState.contacts) {
       console.log('Обновилось поле contacts');
 
