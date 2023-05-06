@@ -6,7 +6,7 @@ export const ContactListItem = ({ id, name, number, onDeleteContact }) => {
     <>
       {name}: {number}
       <FormButton type="button" onClick={() => onDeleteContact(id)}>
-        Delete contact
+        Delete
       </FormButton>
     </>
   );

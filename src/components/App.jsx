@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -18,12 +20,31 @@ export class App extends Component {
       ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
     );
     if (isExist) {
-      alert(`${contact.name} is already in contacts.`);
+      toast.error(`${contact.name} is already in contacts.`, {
+        position: 'top-left',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
       return;
     }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, { id: nanoid(), ...contact }],
     }));
+    toast.success('Контакт успешно добавлен!', {
+      position: 'top-left',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
   clearContact = idContact => {
     this.setState(prevState => ({
@@ -50,8 +71,6 @@ export class App extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      console.log('Обновилось поле contacts');
-
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
@@ -75,6 +94,7 @@ export class App extends Component {
         ) : (
           <p>There is no contacts here</p>
         )}
+        <ToastContainer />
       </div>
     );
   }

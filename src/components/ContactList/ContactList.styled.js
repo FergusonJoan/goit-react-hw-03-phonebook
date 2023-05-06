@@ -8,4 +8,6 @@ export const List = styled.ul`
 `;
 export const ListItem = styled.li`
   font-size: 20px;
+
+  margin-bottom: 10px;
 `;
