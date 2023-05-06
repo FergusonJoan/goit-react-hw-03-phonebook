@@ -10,4 +10,5 @@ export const FormButton = styled.button`
   background-color: #228b22;
   border-color: #228b22;
   color: #fff;
+  max-height: 30px;
 `;

@@ -9,7 +9,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   justify-content: end;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
   gap: 20px;
 `;
