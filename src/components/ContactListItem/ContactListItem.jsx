@@ -4,7 +4,9 @@ import { FormButton } from './ContactListIlem.styled';
 export const ContactListItem = ({ id, name, number, onDeleteContact }) => {
   return (
     <>
-      {name}: {number}
+      <span>
+        {name}: {number}
+      </span>
       <FormButton type="button" onClick={() => onDeleteContact(id)}>
         Delete
       </FormButton>

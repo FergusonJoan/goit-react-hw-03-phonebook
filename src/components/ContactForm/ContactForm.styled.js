@@ -28,7 +28,9 @@ export const ErrorText = styled(ErrorMessage)`
 
 export const FormButton = styled.button`
   padding: 5px 10px;
-  background-color: white;
+  background-color: #228b22;
+  border-color: #228b22;
+  color: #fff;
   border: 1px solid;
   border-radius: 3px;
 `;
