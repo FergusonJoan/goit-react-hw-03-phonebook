@@ -1,5 +1,3 @@
-import React from 'react';
-
 import PropTypes from 'prop-types';
 import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 import { List, ListItem } from './ContactList.styled';
